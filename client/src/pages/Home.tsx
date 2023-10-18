@@ -1,10 +1,12 @@
-import { Header, HomeTitle } from "../components";
-
-// import shoe from "../assets/images/DURAMO SL SHOES.avif";
-import item from "../assets/images/grailify-4y_zTA_M35k-unsplash.jpg";
 import { useEffect, useState } from "react";
 import axios from "axios";
+
 import FeaturedShoes from "../components/FeaturedShoes";
+import { Header, HomeTitle } from "../components";
+import Footer from "../components/Footer";
+
+import item from "../assets/images/Hero.png";
+import { url } from "inspector";
 
 interface Products {
   id: String;
@@ -14,31 +16,42 @@ interface Products {
 }
 
 const Home = () => {
-  const [products, setProducts] = useState<Products>();
-  const [newProducts, setNewProducts] = useState<Products>();
+  const [products, setProducts] = useState([]);
+  const [newProducts, setNewProducts] = useState([]);
   const [isLoading, setLoading] = useState<boolean>();
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      setLoading(true);
-      try {
-        const response = await axios.get("https://localhost:7241/api/product/");
-        setProducts(response.data);
-      } catch (e) {
-        console.log("FETCH PRODUCTS _> ", e);
-      }
-    };
+    setLoading(true);
 
-    fetchProducts();
-    setLoading(false);
+    const fetchProducts = axios.get(
+      "https://localhost:7241/api/product?isFeatured=true"
+    );
+    const fetchNew = axios.get("https://localhost:7241/api/product?isNew=true");
+
+    Promise.all([fetchProducts, fetchNew])
+      .then((responses) => {
+        const [productsResponse, ordersResponse] = responses;
+        setProducts(productsResponse.data);
+        setNewProducts(ordersResponse.data);
+      })
+      .catch((error) => {
+        console.log("Error fetching data: ", error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }, []);
+
+  if (!isLoading) {
+    console.log(products);
+  }
   return (
     <>
       <div className="mx-4 mt-4 md:max-w-[1196px] md:mx-auto ">
-        <div className="h-[560px] md:h-screen overflow-auto">
-          <Header />
-          <div className="mt-[104px] md:mt-[20%] text-gray-800 font-bold md:w-[345px]">
-            <h1 className="text-2xl md:text-3xl">
+        <Header />
+        <div className="hero h-[560px] flex flex-col justify-center items-center text-center rounded-2xl">
+          <div className=" text-gray-200 font-bold md:max-w-[450px]">
+            <h1 className="text-2xl md:text-4xl">
               Adidas sneaker X.Z.E Wild Weather Rock
             </h1>
             <h2 className="text-2xl md:text-3xl my-4">R1520.58</h2>
@@ -46,19 +59,15 @@ const Home = () => {
               View Product
             </button>
           </div>
-
-          <img
-            className="absolute inset-0 -z-10 w-full h-[560px] md:h-screen  object-cover"
-            src={item}
-            alt="carousel"
-          />
         </div>
+
         <HomeTitle title="Our Products" nav="man" />
 
         {isLoading ? (
           <p>Loading...</p>
         ) : (
           products !== null && <FeaturedShoes product={products} />
+          // <p>Data</p>
         )}
 
         <HomeTitle title="New Arrivals" nav="man" />
@@ -68,7 +77,15 @@ const Home = () => {
         ) : (
           <FeaturedShoes product={newProducts} />
         )} */}
+
+        {isLoading ? (
+          <p>Loading...</p>
+        ) : (
+          newProducts !== null && <FeaturedShoes product={newProducts} />
+          // <p>Data</p>
+        )}
       </div>
+      <Footer />
     </>
   );
 };

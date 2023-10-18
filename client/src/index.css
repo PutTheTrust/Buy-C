@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.hero {
+  background: url("./assets/images/Hero.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.prod::-webkit-scrollbar {
+  width: 12px; /* Set the width of the scrollbar track */
+  height: 0.5em;
+  padding: 2px;
+  border-radius: 100vw;
+}
+
+.prod::-webkit-scrollbar-thumb {
+  background: #000; /* Background color of the thumb */
+  border-radius: 100vw;
+  width: 6px; /* Set the width of the scrollbar thumb */
+}

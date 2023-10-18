@@ -23,28 +23,21 @@ namespace buyC.Controllers
             try
             {
                 // Look at what As Queryable returns
-                var shoes = _db.Shoes.AsQueryable();
+                var query = _db.Shoes.AsQueryable();
                 
-                // if (!isNew && !isFeatured)
-                // {
-                //     
-                //     return Ok(shoes.ToListAsync());
-                // }
 
                 if (isNew)
                 {
-                    isFeatured = false;
-                    await shoes.OrderByDescending(x => x.Date)
-                        .Take(5)
-                        .ToListAsync();
+                    query = query.OrderByDescending(x => x.Date)
+                        .Take(5);
                 }
 
                 if (isFeatured)
                 {
-                    isNew = false;
-                    await shoes.Where(x => x.IsFeatured == true)
-                        .ToListAsync();
+                    query = query.Where(x => x.IsFeatured == true);
                 }
+
+                var shoes = await query.ToListAsync();
 
                 return Ok(shoes);
             }

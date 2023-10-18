@@ -8,7 +8,7 @@ interface CardProps {
 
 const Card = ({ image, name, price }: CardProps) => {
   return (
-    <div className="rounded-[15px] overflow-hidden">
+    <div className="rounded-[15px] overflow-hidden max-w-[345px] flex-shrink-0 my-3">
       <img className="rounded-[15px]" src={image} alt={name} />
       <div className="flex justify-between items-center mt-5">
         <div className="font-semibold">

@@ -16,7 +16,8 @@ import Card from "./Card";
 const FeaturedShoes = ({ product }: any) => {
   console.log(product);
   return (
-    <div className="mt-7 md:flex md:gap-4">
+    // <div className="md:flex flex-1 overflow-auto">
+    <div className="mt-7 flex justify-between gap-4 w-full overflow-x-auto prod">
       {product.map((prod: any) => (
         <Card
           key={prod.id}
@@ -26,6 +27,7 @@ const FeaturedShoes = ({ product }: any) => {
         />
       ))}
     </div>
+    // </div>
   );
 };
 
