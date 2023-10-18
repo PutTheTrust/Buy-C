@@ -17,36 +17,42 @@ namespace buyC.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetShoes()
+        public async Task<IActionResult> GetShoes(bool isNew, bool isFeatured)
         {
-            var shoes = _db.Shoes.ToList();
-
-            return Ok(shoes);
-        }
-
-        [HttpGet("new")]
-        public async Task<IActionResult> GetNewArrivals()
-        {
+            // var shoes = _db.Shoes.ToList();
             try
             {
-                var shoes = await _db.Shoes
-                    .OrderByDescending(x => x.Date)
-                    .Take(5)
-                    .ToListAsync();
+                // Look at what As Queryable returns
+                var shoes = _db.Shoes.AsQueryable();
+                
+                // if (!isNew && !isFeatured)
+                // {
+                //     
+                //     return Ok(shoes.ToListAsync());
+                // }
 
-                if (shoes.Count == 0)
+                if (isNew)
                 {
-                    // If there are no new arrivals, return a 404 Not Found response.
-                    return NotFound();
+                    isFeatured = false;
+                    await shoes.OrderByDescending(x => x.Date)
+                        .Take(5)
+                        .ToListAsync();
+                }
+
+                if (isFeatured)
+                {
+                    isNew = false;
+                    await shoes.Where(x => x.IsFeatured == true)
+                        .ToListAsync();
                 }
 
                 return Ok(shoes);
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                // Log the exception or handle it appropriately.
-                return StatusCode(500, "An error occurred while fetching new arrivals.");
+                return StatusCode(500, "An error occured while fetching results");
             }
         }
+        
     }
 }

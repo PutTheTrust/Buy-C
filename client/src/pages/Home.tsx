@@ -1,12 +1,22 @@
-import { Card, Header, HomeTitle } from "../components";
+import { Header, HomeTitle } from "../components";
 
-import shoe from "../assets/images/DURAMO SL SHOES.avif";
+// import shoe from "../assets/images/DURAMO SL SHOES.avif";
 import item from "../assets/images/grailify-4y_zTA_M35k-unsplash.jpg";
-import { Key, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
+import FeaturedShoes from "../components/FeaturedShoes";
+
+interface Products {
+  id: String;
+  image: String;
+  name: String;
+  price: String;
+}
+
 const Home = () => {
-  const [products, setProducts] = useState<any>();
-  const [isLoading, setLoading] = useState(false);
+  const [products, setProducts] = useState<Products>();
+  const [newProducts, setNewProducts] = useState<Products>();
+  const [isLoading, setLoading] = useState<boolean>();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -45,24 +55,19 @@ const Home = () => {
         </div>
         <HomeTitle title="Our Products" nav="man" />
 
-        <div className="mt-7 md:flex md:gap-4">
-          {/* <Card image={shoe} name="DURAMO" price="2564.36" />
-          <Card image={shoe} name="DURAMO" price="2564.36" />
-          <Card image={shoe} name="DURAMO" price="2564.36" /> */}
-          {isLoading ? (
-            <p>Loading...</p>
-          ) : (
-            products != null &&
-            products.map((product: any) => (
-              <Card
-                key={product.id}
-                image={product.image}
-                name={product.name}
-                price={product.price}
-              />
-            ))
-          )}
-        </div>
+        {isLoading ? (
+          <p>Loading...</p>
+        ) : (
+          products !== null && <FeaturedShoes product={products} />
+        )}
+
+        <HomeTitle title="New Arrivals" nav="man" />
+
+        {/* {isLoading ? (
+          <p>Loading...</p>
+        ) : (
+          <FeaturedShoes product={newProducts} />
+        )} */}
       </div>
     </>
   );

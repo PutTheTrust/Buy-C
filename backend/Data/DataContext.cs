@@ -26,6 +26,7 @@ namespace buyC.Data
                     Image = "https://res.cloudinary.com/dtwnppsc6/image/upload/v1697391046/Air_Jordan_Legacy_312_a46xsf.webp",
                     Description = "A comfortable and durable running shoe.",
                     Date = DateTime.UtcNow,
+                    IsFeatured = true
                 },
                 new Shoe
                 {
@@ -35,6 +36,7 @@ namespace buyC.Data
                     Image = "https://res.cloudinary.com/dtwnppsc6/image/upload/v1697391046/Jumpman_MVP_vjjeul.webp",
                     Description = "A stylish and comfortable casual shoe.",
                     Date = DateTime.UtcNow,
+                    IsFeatured = true
 
                 },
                 new Shoe
@@ -45,6 +47,7 @@ namespace buyC.Data
                     Image = "https://res.cloudinary.com/dtwnppsc6/image/upload/v1697391046/Jordan_Post_c5bsey.webp",
                     Description = "A stylish and comfortable casual shoe.",
                     Date = DateTime.UtcNow,
+                    IsFeatured = true
                 },
                 new Shoe
                 {
@@ -54,6 +57,7 @@ namespace buyC.Data
                     Image = "https://res.cloudinary.com/dtwnppsc6/image/upload/v1697392428/X_PLRBOOST_SHOES_e5z4m3.avif",
                     Description = "A stylish and comfortable casual shoe.",
                     Date = DateTime.UtcNow,
+                    IsFeatured = false
                 },
                 new Shoe
                 {
@@ -63,6 +67,7 @@ namespace buyC.Data
                     Image = "https://res.cloudinary.com/dtwnppsc6/image/upload/v1697392428/RACER_TR23_SHOES_jpfphb.avif",
                     Description = "A stylish and comfortable casual shoe.",
                     Date = DateTime.UtcNow,
+                    IsFeatured = false
                 },
                 new Shoe
                 {
@@ -72,6 +77,7 @@ namespace buyC.Data
                     Image = "https://res.cloudinary.com/dtwnppsc6/image/upload/v1697392428/DURAMO_SL_SHOES_erzcaq.avif",
                     Description = "A stylish and comfortable casual shoe.",
                     Date = DateTime.UtcNow,
+                    IsFeatured = false
                 });
         }
     }
