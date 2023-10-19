@@ -21,3 +21,19 @@
   border-radius: 100vw;
   width: 6px; /* Set the width of the scrollbar thumb */
 }
+
+.sliding-div {
+  width: 300px; /* Adjust the width as needed */
+  height: 100px; /* Adjust the height as needed */
+  background-color: #ccc;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: transform 0.3s ease-in-out; /* Adjust the animation speed and easing */
+  transform: translateX(0);
+
+  /* Apply a translation to slide in when isOpen is true */
+  transform: translateX(
+    100%
+  ); /* Slide in from the right (you can adjust as needed) */
+}

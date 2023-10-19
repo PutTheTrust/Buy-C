@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 
 import logo from "../assets/images/logo.svg";
 import search from "../assets/images/icon-search.svg";
 import heart from "../assets/images/icon-heart.svg";
 import menu from "../assets/images/icon-menu.svg";
 import bag from "../assets/images/icon-bag.svg";
+import MobileNav from "./MobileNav";
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(true);
   return (
     <>
       <div className="flex justify-between items-center">
@@ -46,20 +48,21 @@ const Header = () => {
 
         <div className="flex gap-2 md:hidden">
           <button>
-            <img src={search} alt="logo" />
+            <img src={search} alt="search" />
           </button>
 
           <button>
-            <img src={heart} alt="logo" />
+            <img src={heart} alt="heart" />
           </button>
 
-          <button>
-            <img src={menu} alt="logo" />
+          <button onClick={() => setIsOpen(true)}>
+            <img src={menu} alt="menu" />
           </button>
         </div>
       </div>
 
       <div className="bg-gray-100 h-[0.5px] mt-4" />
+      <MobileNav setIsOpen={setIsOpen} isOpen={isOpen} />
     </>
   );
 };
