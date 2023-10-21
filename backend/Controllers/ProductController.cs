@@ -46,6 +46,25 @@ namespace buyC.Controllers
                 return StatusCode(500, "An error occured while fetching results");
             }
         }
+
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetShoe(int id)
+        {
+            try
+            {
+                var shoe = await _db.Shoes.FindAsync(id);
+
+                if (shoe == null)
+                {
+                    return NotFound("Shoe not found");
+                }
+
+                return Ok(shoe);
+            } catch (Exception e)
+            {
+                return BadRequest("Problem encountered");
+            }
+        }
         
     }
 }

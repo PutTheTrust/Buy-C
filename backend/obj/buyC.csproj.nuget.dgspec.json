@@ -1,26 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/bekithembamdluli/Documents/development/web/Buy-C/backend/buyC.csproj": {}
+    "C:\\Users\\Themba\\Desktop\\development\\full-stack\\Buy C\\backend\\buyC.csproj": {}
   },
   "projects": {
-    "/Users/bekithembamdluli/Documents/development/web/Buy-C/backend/buyC.csproj": {
+    "C:\\Users\\Themba\\Desktop\\development\\full-stack\\Buy C\\backend\\buyC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/bekithembamdluli/Documents/development/web/Buy-C/backend/buyC.csproj",
+        "projectUniqueName": "C:\\Users\\Themba\\Desktop\\development\\full-stack\\Buy C\\backend\\buyC.csproj",
         "projectName": "buyC",
-        "projectPath": "/Users/bekithembamdluli/Documents/development/web/Buy-C/backend/buyC.csproj",
-        "packagesPath": "/Users/bekithembamdluli/.nuget/packages/",
-        "outputPath": "/Users/bekithembamdluli/Documents/development/web/Buy-C/backend/obj/",
+        "projectPath": "C:\\Users\\Themba\\Desktop\\development\\full-stack\\Buy C\\backend\\buyC.csproj",
+        "packagesPath": "C:\\Users\\Themba\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Themba\\Desktop\\development\\full-stack\\Buy C\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/bekithembamdluli/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Themba\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "/Users/bekithembamdluli/.dotnet/sdk/7.0.306/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -81,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/Users/bekithembamdluli/.dotnet/sdk/7.0.306/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
