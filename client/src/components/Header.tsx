@@ -19,20 +19,20 @@ const Header = () => {
 
         <ul className="hidden md:flex md:gap-6 md:font-medium text-black">
           <li>
-            <a href="/">Man</a>
+            <Link to="/man">Man</Link>
           </li>
           <li>
-            <a href="/">Woman</a>
+            <Link to="/woman">Woman</Link>
           </li>
           <li>
-            <a href="/">Kids</a>
+            <Link to="/kids">Kids</Link>
           </li>
           <li>
-            <a href="/">Accessories</a>
+            <Link to="/accessories">Accessories</Link>
           </li>
-          <li>
-            <a href="/">New In</a>
-          </li>
+          {/* <li>
+            <Link to="/">New In</Link>
+          </li> */}
         </ul>
 
         <div className="hidden md:flex md:gap-2 ">

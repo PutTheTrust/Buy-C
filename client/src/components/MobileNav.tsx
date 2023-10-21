@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 
 import close from "../assets/images/icon-close.svg";
+import { Link } from "react-router-dom";
 
 interface MobileNavProps {
   setIsOpen: Dispatch<SetStateAction<boolean>>;
@@ -24,20 +25,20 @@ const MobileNav = ({ setIsOpen, isOpen }: MobileNavProps) => {
       </button>
       <ul className="mt-12 space-y-5 ml-6">
         <li>
-          <a href="/man">Man</a>
+          <Link to="/man">Man</Link>
         </li>
         <li>
-          <a href="/man">Woman</a>
+          <Link to="/woman">Woman</Link>
         </li>
         <li>
-          <a href="/man">Kids</a>
+          <Link to="/kids">Kids</Link>
         </li>
         <li>
-          <a href="/man">Accessories</a>
+          <Link to="/accessories">Accessories</Link>
         </li>
-        <li>
+        {/* <li>
           <a href="/man">New in</a>
-        </li>
+        </li> */}
       </ul>
     </div>
   );

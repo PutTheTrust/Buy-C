@@ -66,5 +66,25 @@ namespace buyC.Controllers
             }
         }
         
+        [HttpGet("category/{name}")]
+        public async Task<IActionResult> GetShoesByCategory(string name)
+        {
+            try
+            {
+                var shoes = await _db.Shoes.AsQueryable().Where(x => x.Category == name).ToListAsync();
+
+                if (shoes == null)
+                {
+                    return NotFound("Shoes with that category not found");
+                }
+
+                return Ok(shoes);
+            }
+            catch (Exception e)
+            {
+                return BadRequest("Problem fetching shoes");
+            }
+        }
+        
     }
 }

@@ -15,6 +15,8 @@ namespace buyC.Models
         public string Image { get; set; }
         [Required]
         public string Description { get; set; }
+        [Required]
+        public string Category { get; set; }
 
         public bool IsFeatured { get; set; }
         public DateTime Date { get; set; } = DateTime.UtcNow;

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using buyC.Data;
 
@@ -10,9 +11,11 @@ using buyC.Data;
 namespace buyC.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20231021185114_addWomanShoes")]
+    partial class addWomanShoes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.12");
@@ -94,7 +97,7 @@ namespace buyC.Migrations
                         {
                             Id = 1,
                             Category = "Man",
-                            Date = new DateTime(2023, 10, 21, 19, 17, 42, 726, DateTimeKind.Utc).AddTicks(3057),
+                            Date = new DateTime(2023, 10, 21, 18, 51, 14, 843, DateTimeKind.Utc).AddTicks(8214),
                             Description = "A comfortable and durable running shoe.",
                             Image = "https://res.cloudinary.com/dtwnppsc6/image/upload/v1697391046/Air_Jordan_Legacy_312_a46xsf.webp",
                             IsFeatured = true,
@@ -105,7 +108,7 @@ namespace buyC.Migrations
                         {
                             Id = 2,
                             Category = "Man",
-                            Date = new DateTime(2023, 10, 21, 19, 17, 42, 726, DateTimeKind.Utc).AddTicks(3059),
+                            Date = new DateTime(2023, 10, 21, 18, 51, 14, 843, DateTimeKind.Utc).AddTicks(8217),
                             Description = "A stylish and comfortable casual shoe.",
                             Image = "https://res.cloudinary.com/dtwnppsc6/image/upload/v1697391046/Jumpman_MVP_vjjeul.webp",
                             IsFeatured = true,
@@ -116,7 +119,7 @@ namespace buyC.Migrations
                         {
                             Id = 3,
                             Category = "Man",
-                            Date = new DateTime(2023, 10, 21, 19, 17, 42, 726, DateTimeKind.Utc).AddTicks(3061),
+                            Date = new DateTime(2023, 10, 21, 18, 51, 14, 843, DateTimeKind.Utc).AddTicks(8219),
                             Description = "A stylish and comfortable casual shoe.",
                             Image = "https://res.cloudinary.com/dtwnppsc6/image/upload/v1697391046/Jordan_Post_c5bsey.webp",
                             IsFeatured = true,
@@ -127,7 +130,7 @@ namespace buyC.Migrations
                         {
                             Id = 4,
                             Category = "Man",
-                            Date = new DateTime(2023, 10, 21, 19, 17, 42, 726, DateTimeKind.Utc).AddTicks(3063),
+                            Date = new DateTime(2023, 10, 21, 18, 51, 14, 843, DateTimeKind.Utc).AddTicks(8222),
                             Description = "A stylish and comfortable casual shoe.",
                             Image = "https://res.cloudinary.com/dtwnppsc6/image/upload/v1697392428/X_PLRBOOST_SHOES_e5z4m3.avif",
                             IsFeatured = false,
@@ -138,155 +141,67 @@ namespace buyC.Migrations
                         {
                             Id = 5,
                             Category = "Man",
-                            Date = new DateTime(2023, 10, 21, 19, 17, 42, 726, DateTimeKind.Utc).AddTicks(3065),
+                            Date = new DateTime(2023, 10, 21, 18, 51, 14, 843, DateTimeKind.Utc).AddTicks(8225),
                             Description = "A stylish and comfortable casual shoe.",
                             Image = "https://res.cloudinary.com/dtwnppsc6/image/upload/v1697392428/RACER_TR23_SHOES_jpfphb.avif",
                             IsFeatured = false,
                             Name = "RACER TR23 SHOES",
-                            Price = 4235.0
+                            Price = 1699.0
                         },
                         new
                         {
                             Id = 6,
                             Category = "Man",
-                            Date = new DateTime(2023, 10, 21, 19, 17, 42, 726, DateTimeKind.Utc).AddTicks(3067),
+                            Date = new DateTime(2023, 10, 21, 18, 51, 14, 843, DateTimeKind.Utc).AddTicks(8227),
                             Description = "A stylish and comfortable casual shoe.",
                             Image = "https://res.cloudinary.com/dtwnppsc6/image/upload/v1697392428/DURAMO_SL_SHOES_erzcaq.avif",
                             IsFeatured = false,
                             Name = "DURAMO SL SHOES",
-                            Price = 3352.0
+                            Price = 1299.0
                         },
                         new
                         {
                             Id = 7,
                             Category = "Woman",
-                            Date = new DateTime(2023, 10, 21, 19, 17, 42, 726, DateTimeKind.Utc).AddTicks(3069),
+                            Date = new DateTime(2023, 10, 21, 18, 51, 14, 843, DateTimeKind.Utc).AddTicks(8230),
                             Description = "A stylish and comfortable casual shoe.",
                             Image = "https://res.cloudinary.com/dtwnppsc6/image/upload/v1697913855/Nano_2_Shoes_nkty64.jpg",
                             IsFeatured = false,
                             Name = "Nano 2 Shoes",
-                            Price = 5242.0
+                            Price = 1299.0
                         },
                         new
                         {
                             Id = 8,
                             Category = "Woman",
-                            Date = new DateTime(2023, 10, 21, 19, 17, 42, 726, DateTimeKind.Utc).AddTicks(3071),
+                            Date = new DateTime(2023, 10, 21, 18, 51, 14, 843, DateTimeKind.Utc).AddTicks(8232),
                             Description = "A stylish and comfortable casual shoe.",
                             Image = "https://res.cloudinary.com/dtwnppsc6/image/upload/v1697913855/Nano_X3_Shoes_aiom3s.jpg",
                             IsFeatured = false,
                             Name = "Nano X3 Shoes",
-                            Price = 3645.0
+                            Price = 1299.0
                         },
                         new
                         {
                             Id = 9,
                             Category = "Woman",
-                            Date = new DateTime(2023, 10, 21, 19, 17, 42, 726, DateTimeKind.Utc).AddTicks(3073),
+                            Date = new DateTime(2023, 10, 21, 18, 51, 14, 843, DateTimeKind.Utc).AddTicks(8234),
                             Description = "A stylish and comfortable casual shoe.",
                             Image = "https://res.cloudinary.com/dtwnppsc6/image/upload/v1697913855/Zig_Dynamica_4_pw2nb6.jpg",
                             IsFeatured = false,
                             Name = "Zig Dynamica 4",
-                            Price = 4239.0
+                            Price = 1299.0
                         },
                         new
                         {
                             Id = 10,
                             Category = "Woman",
-                            Date = new DateTime(2023, 10, 21, 19, 17, 42, 726, DateTimeKind.Utc).AddTicks(3075),
+                            Date = new DateTime(2023, 10, 21, 18, 51, 14, 843, DateTimeKind.Utc).AddTicks(8237),
                             Description = "A stylish and comfortable casual shoe.",
                             Image = "https://res.cloudinary.com/dtwnppsc6/image/upload/v1697913855/ADIDAS_BY_STELLA_MCCARTNEY_ULTRABOOST_LIGHT_SHOES_qrnor5.avif",
                             IsFeatured = false,
                             Name = "ADIDAS BY STELLA MCCARTNEY ULTRABOOST LIGHT SHOES",
-                            Price = 1989.0
-                        },
-                        new
-                        {
-                            Id = 11,
-                            Category = "Kids",
-                            Date = new DateTime(2023, 10, 21, 19, 17, 42, 726, DateTimeKind.Utc).AddTicks(3077),
-                            Description = "A stylish and comfortable casual shoe.",
-                            Image = "https://res.cloudinary.com/dtwnppsc6/image/upload/v1697914586/Club_C_Shoes_l0syzs.jpg",
-                            IsFeatured = false,
-                            Name = "Club C Shoes",
-                            Price = 1969.0
-                        },
-                        new
-                        {
-                            Id = 12,
-                            Category = "Kids",
-                            Date = new DateTime(2023, 10, 21, 19, 17, 42, 726, DateTimeKind.Utc).AddTicks(3079),
-                            Description = "A stylish and comfortable casual shoe.",
-                            Image = "https://res.cloudinary.com/dtwnppsc6/image/upload/v1697914586/SUPERSTAR_YU-GI-OH_SHOES_ik5j5o.avif",
-                            IsFeatured = false,
-                            Name = "SUPERSTAR YU-GI-OH! SHOES",
-                            Price = 1859.0
-                        },
-                        new
-                        {
-                            Id = 13,
-                            Category = "Kids",
-                            Date = new DateTime(2023, 10, 21, 19, 17, 42, 726, DateTimeKind.Utc).AddTicks(3081),
-                            Description = "A stylish and comfortable casual shoe.",
-                            Image = "https://res.cloudinary.com/dtwnppsc6/image/upload/v1697914587/Jordan_1_Mid_cgson8.webp",
-                            IsFeatured = false,
-                            Name = "Jordan 1 Mid",
-                            Price = 2299.0
-                        },
-                        new
-                        {
-                            Id = 14,
-                            Category = "Kids",
-                            Date = new DateTime(2023, 10, 21, 19, 17, 42, 726, DateTimeKind.Utc).AddTicks(3083),
-                            Description = "A stylish and comfortable casual shoe.",
-                            Image = "https://res.cloudinary.com/dtwnppsc6/image/upload/v1697914587/Jumpman_Two_Trey_xft9yu.webp",
-                            IsFeatured = false,
-                            Name = "Jumpman Two Trey",
-                            Price = 2599.0
-                        },
-                        new
-                        {
-                            Id = 15,
-                            Category = "Accessories",
-                            Date = new DateTime(2023, 10, 21, 19, 17, 42, 726, DateTimeKind.Utc).AddTicks(3085),
-                            Description = "A stylish and comfortable casual shoe.",
-                            Image = "https://res.cloudinary.com/dtwnppsc6/image/upload/v1697915415/UCL_PRO_BALL_me0fxc.avif",
-                            IsFeatured = false,
-                            Name = "UCL PRO BALL",
-                            Price = 2299.0
-                        },
-                        new
-                        {
-                            Id = 16,
-                            Category = "Accessories",
-                            Date = new DateTime(2023, 10, 21, 19, 17, 42, 726, DateTimeKind.Utc).AddTicks(3087),
-                            Description = "A stylish and comfortable casual shoe.",
-                            Image = "https://res.cloudinary.com/dtwnppsc6/image/upload/v1697915415/TERREX_X_NATIONAL_GEOGRAPHIC_BEANIE_gg4hym.avif",
-                            IsFeatured = false,
-                            Name = "TERREX X NATIONAL GEOGRAPHIC BEANIE",
-                            Price = 2299.0
-                        },
-                        new
-                        {
-                            Id = 17,
-                            Category = "Accessories",
-                            Date = new DateTime(2023, 10, 21, 19, 17, 42, 726, DateTimeKind.Utc).AddTicks(3089),
-                            Description = "A stylish and comfortable casual shoe.",
-                            Image = "https://res.cloudinary.com/dtwnppsc6/image/upload/v1697915415/TECH_FISHERMAN_HAT_kl0atg.avif",
-                            IsFeatured = false,
-                            Name = "TECH FISHERMAN HAT",
-                            Price = 2299.0
-                        },
-                        new
-                        {
-                            Id = 18,
-                            Category = "Accessories",
-                            Date = new DateTime(2023, 10, 21, 19, 17, 42, 726, DateTimeKind.Utc).AddTicks(3091),
-                            Description = "A stylish and comfortable casual shoe.",
-                            Image = "https://res.cloudinary.com/dtwnppsc6/image/upload/v1697915415/MONCLER_X_ADIDAS_ORIGINALS_REVERSIBLE_BUCKET_HAT_n59ppi.avif",
-                            IsFeatured = false,
-                            Name = "MONCLER X ADIDAS ORIGINALS REVERSIBLE BUCKET HAT",
-                            Price = 2299.0
+                            Price = 1299.0
                         });
                 });
 

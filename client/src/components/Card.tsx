@@ -10,13 +10,17 @@ interface CardProps {
 
 const Card = ({ image, name, price, id }: CardProps) => {
   return (
-    <div className="rounded-[15px] overflow-hidden max-w-[345px] flex-shrink-0 my-3">
+    <div className="rounded-[15px] overflow-hidden max-w-[345px] object-contain flex-shrink-0 my-3">
       <Link to={`product/${id}`}>
-        <img className="rounded-[15px]" src={image} alt={name} />
+        <img
+          className="rounded-[15px] max-h-[345px] w-full object-cover"
+          src={image}
+          alt={name}
+        />
       </Link>
       <div className="flex justify-between items-center mt-5">
         <div className="font-semibold">
-          <h2>{name}</h2>
+          <h2 className="uppercase">{name}</h2>
           <h3>R{price}</h3>
         </div>
 
