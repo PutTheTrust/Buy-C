@@ -6,15 +6,18 @@ import heart from "../assets/images/icon-heart.svg";
 import menu from "../assets/images/icon-menu.svg";
 import bag from "../assets/images/icon-bag.svg";
 import MobileNav from "./MobileNav";
+import { Link } from "react-router-dom";
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <div className="flex justify-between items-center">
-        <img src={logo} alt="logo" />
+        <Link to="/">
+          <img src={logo} alt="logo" />
+        </Link>
 
-        <ul className="hidden md:flex md:gap-6 md:font-medium text-white">
+        <ul className="hidden md:flex md:gap-6 md:font-medium text-black">
           <li>
             <a href="/">Man</a>
           </li>

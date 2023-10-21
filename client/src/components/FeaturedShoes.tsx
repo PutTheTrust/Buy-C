@@ -24,6 +24,7 @@ const FeaturedShoes = ({ product }: any) => {
           image={prod.image}
           name={prod.name}
           price={prod.price}
+          id={prod.id}
         />
       ))}
     </div>
